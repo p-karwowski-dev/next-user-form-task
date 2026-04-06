@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Installation:
 
-## Getting Started
+This project is using node v24.10.0 and npm 11.6.1.
 
-First, run the development server:
+```bash
+npm install
+```
+
+## Running
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Testing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run test
+```
 
-## Learn More
+## Engineering notes - objectives
 
-To learn more about Next.js, take a look at the following resources:
+Reasoning after reading task description:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Form validation on both FE and BE to assure correct data manipulation (zod.js).
+- Shared schema and types between FE and BE to avoid misalignments and duplications. Would be good to derived types and schema from each other and keep it tide to not have to maintain them separately.
+- Form error handling.
+- Form state preservation of error for nice user experience.
+- Basic form tags htmlFor, id for accessibility.
+- Sharing style between components to avoid duplications
+- Folder structure which decouple logic and can be scaled up. App folder left to serve routing purpose only and everything else grouped in separate folders.
+- Simplicity
