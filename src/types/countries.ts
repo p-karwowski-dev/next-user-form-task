@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { COUNTRY_OPTIONS } from "../constants/counties";
+import { COUNTRY_OPTIONS } from "../constants/countries";
 
 const countries = COUNTRY_OPTIONS.map((o) => o.value) as [string, ...string[]];
 

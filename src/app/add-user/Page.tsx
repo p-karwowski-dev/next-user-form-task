@@ -1,10 +1,10 @@
 "use client";
 
 import { useActionState } from "react";
-import { addUserAction } from "../../actions/addUserAction";
+import { addUserAction } from "../../actions/user/addUserAction";
 import Field from "../../components/form/Field";
 import Dropdown from "../../components/form/Dropdown";
-import { COUNTRY_OPTIONS } from "../../constants/counties";
+import { COUNTRY_OPTIONS } from "../../constants/countries";
 import { INTEREST_OPTIONS } from "../../constants/interests";
 
 const addUserActionState = {
@@ -33,7 +33,7 @@ export default function Page() {
         name="age"
         type="number"
         error={state.errors?.age}
-        defaultValue={state.data?.age as string}
+        defaultValue={state.data?.age?.toString()}
       />
 
       <Dropdown

@@ -1,6 +1,6 @@
 import { promises as fs } from "fs";
 import path from "path";
-import { User } from "../types/user";
+import { User } from "../../types/user";
 
 const DB_PATH = path.join(process.cwd(), "public", "users.json");
 

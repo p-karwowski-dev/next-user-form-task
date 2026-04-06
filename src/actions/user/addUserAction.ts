@@ -1,7 +1,7 @@
 "use server";
 
-import { User, UserSchema } from "../types/user";
-import { addUserService } from "../services/addUserService";
+import { addUserService } from "../../services/user/addUserService";
+import { User, UserSchema } from "../../types/user";
 
 type UserError = Partial<Record<keyof User, string>> | null;
 
