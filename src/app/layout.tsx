@@ -33,7 +33,7 @@ export default function RootLayout({
           <Nav />
         </header>
         <main className="flex-1 flex items-center justify-center">
-          <div className="flex flex-col p-30 rounded-2xl bg-gray-500/20 backdrop-blur-md">
+          <div className="flex flex-col p-20 rounded-2xl bg-gray-500/20 backdrop-blur-md">
             {children}
           </div>
         </main>
