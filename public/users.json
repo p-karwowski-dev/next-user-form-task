@@ -1,0 +1,20 @@
+[
+  {
+    "fullName": "Moe Teal",
+    "age": 19,
+    "country": "US",
+    "interests": [
+      "coding",
+      "travel",
+      "sports"
+    ]
+  },
+  {
+    "fullName": "Tom Hoogar Second",
+    "age": 90,
+    "country": "UK",
+    "interests": [
+      "travel"
+    ]
+  }
+]
