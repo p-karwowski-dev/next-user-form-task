@@ -22,6 +22,13 @@ export default function Nav() {
       >
         User Form
       </Link>
+      <span className="border-l border-gray-400 h-6" />
+      <Link
+        href="/users"
+        className={pathname === "/users" ? activeTabClass : inactiveTabClass}
+      >
+        Users
+      </Link>
     </nav>
   );
 }

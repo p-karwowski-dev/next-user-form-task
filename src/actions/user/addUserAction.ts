@@ -1,5 +1,6 @@
 "use server";
 
+import { updateTag } from "next/cache";
 import { addUserService } from "../../services/user/addUserService";
 import { User, UserSchema } from "../../types/user";
 
@@ -36,6 +37,7 @@ export async function addUserAction(_: AddUserActionState, formData: FormData) {
 
   try {
     await addUserService(validatedFields.data);
+    updateTag("users");
   } catch {
     return {
       success: false,
