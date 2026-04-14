@@ -9,44 +9,14 @@ export default function Dropdown({
   name,
   options,
   error,
-  multiple = false,
   defaultValue,
 }: {
   label: string;
   name: string;
   options: ReadonlyArray<Option>;
   error?: string;
-  multiple?: boolean;
-  defaultValue?: string | string[];
+  defaultValue?: string;
 }) {
-  if (multiple) {
-    const selected = Array.isArray(defaultValue) ? defaultValue : [];
-    return (
-      <div className={fieldClass}>
-        <span className={labelClass}>{label}</span>
-        <div className={`border p-2 rounded-xl ${fieldClass}`}>
-          {options.map((opt) => (
-            <label
-              key={opt.value}
-              htmlFor={`${name}-${opt.value}`}
-              className="flex items-center gap-2 text-sm"
-            >
-              <input
-                id={`${name}-${opt.value}`}
-                type="checkbox"
-                name={name}
-                value={opt.value}
-                defaultChecked={selected.includes(opt.value)}
-              />
-              {opt.label}
-            </label>
-          ))}
-        </div>
-        <p className={errorClass}>{error ?? ""}</p>
-      </div>
-    );
-  }
-
   return (
     <div className={fieldClass}>
       <label htmlFor={name} className={labelClass}>
@@ -54,7 +24,7 @@ export default function Dropdown({
       </label>
       <select
         id={name}
-        key={defaultValue as string}
+        key={defaultValue}
         name={name}
         defaultValue={defaultValue}
         className="border p-2 pr-8 rounded-xl"

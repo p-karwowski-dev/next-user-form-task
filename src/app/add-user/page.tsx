@@ -4,6 +4,7 @@ import { useActionState } from "react";
 import { addUserAction } from "../../actions/user/addUserAction";
 import Field from "../../components/form/Field";
 import Dropdown from "../../components/form/Dropdown";
+import CheckboxList from "../../components/form/CheckboxList";
 import { COUNTRY_OPTIONS } from "../../constants/countries";
 import { INTEREST_OPTIONS } from "../../constants/interests";
 
@@ -44,12 +45,11 @@ export default function Page() {
         defaultValue={state.data?.country as string}
       />
 
-      <Dropdown
+      <CheckboxList
         label="Interests:"
         name="interests"
         options={INTEREST_OPTIONS}
         error={state.errors?.interests}
-        multiple
         defaultValue={state.data?.interests as string[]}
       />
 

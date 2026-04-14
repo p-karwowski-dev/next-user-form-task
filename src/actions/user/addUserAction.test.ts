@@ -7,6 +7,10 @@ vi.mock("../../services/user/addUserService", () => ({
   addUserService: addUserServiceMock,
 }));
 
+vi.mock("next/cache", () => ({
+  updateTag: vi.fn(),
+}));
+
 import { addUserAction } from "./addUserAction";
 
 const prevState: AddUserActionState = {
